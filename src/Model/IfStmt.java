@@ -4,9 +4,8 @@ public class IfStmt implements IStmt {
     Exp exp;
     IStmt thenS;
     IStmt elseS;
-    //....
 
-    IfStmt(Exp e, IStmt t, IStmt el) {exp=e; thenS=t;elseS=el;}
+    public IfStmt(Exp e, IStmt t, IStmt el) {exp=e; thenS=t;elseS=el;}
 
     @Override
     public String toString(){ return "(IF("+ exp.toString()+") THEN(" +thenS.toString()
@@ -27,6 +26,5 @@ public class IfStmt implements IStmt {
 
         return state;
     }
-    //...
 
 }

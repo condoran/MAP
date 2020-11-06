@@ -2,7 +2,10 @@ package Model;
 
 public class PrintStmt implements IStmt {
     Exp exp;
-    //....
+
+    public PrintStmt(Exp v) {
+        exp = v;
+    }
 
     @Override
     public String toString(){ return "print(" +exp.toString()+")";}

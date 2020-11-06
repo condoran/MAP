@@ -18,6 +18,11 @@ public class Controller {
         dispalyFlag = flag;
     }
 
+    public IRepo returnRepo()
+    {
+        return repo;
+    }
+
     PrgState oneStep(PrgState state) throws MyException{
         MyIStack<IStmt> stk=state.getStk();
         if(stk.isEmpty())
@@ -26,7 +31,7 @@ public class Controller {
         return crtStmt.execute(state);
     }
 
-    void allStep() throws MyException {
+    public void allStep() throws MyException {
         PrgState prg = repo.getCrtPrg(); // repo is the controller field of type MyRepoInterface
         //here you can display the prg state
         if (dispalyFlag)

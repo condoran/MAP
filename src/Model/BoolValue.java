@@ -3,7 +3,7 @@ package Model;
 public class BoolValue implements Value {
     boolean val;
 
-    BoolValue(boolean b)
+    public BoolValue(boolean b)
     {
         val = b;
     }
@@ -11,6 +11,14 @@ public class BoolValue implements Value {
     public boolean getVal()
     {
         return val;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof BoolValue))
+            return false;
+        BoolValue o = (BoolValue) obj;
+        return val == o.val;
     }
 
     @Override

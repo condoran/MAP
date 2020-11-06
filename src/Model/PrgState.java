@@ -6,8 +6,8 @@ public class PrgState {
     MyIList<Value> out;
     IStmt originalProgram; //optional field, but good to have
 
-    PrgState(MyIStack<IStmt> stk, MyIDictionary<String,Value> symtbl,
-             MyIList<Value> ot, IStmt prg){
+    public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, Value> symtbl,
+                    MyIList<Value> ot, IStmt prg){
         exeStack=stk;
         symTable=symtbl;
         out = ot;

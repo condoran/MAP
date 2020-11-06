@@ -3,6 +3,12 @@ package Model;
 public class AssignStmt implements IStmt {
     String id;
     Exp exp;
+
+    public AssignStmt(String v, Exp valueExp) {
+        id = v;
+        exp = valueExp;
+    }
+
     //....
     @Override
     public String toString(){ return id+"="+ exp.toString();}
