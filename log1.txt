@@ -1,0 +1,68 @@
+Execution Stack: [(string varf;(varf=test.in;(Opening file: varf;(int varc;(Reading from varf in variable varc;(print(varc);(Reading from varf in variable varc;(print(varc);Close File: varf))))))))]
+Symbol Table: {}
+ Output: []
+ File Table: {}
+Execution Stack: [(varf=test.in;(Opening file: varf;(int varc;(Reading from varf in variable varc;(print(varc);(Reading from varf in variable varc;(print(varc);Close File: varf))))))), string varf]
+Symbol Table: {}
+ Output: []
+ File Table: {}
+Execution Stack: [(varf=test.in;(Opening file: varf;(int varc;(Reading from varf in variable varc;(print(varc);(Reading from varf in variable varc;(print(varc);Close File: varf)))))))]
+Symbol Table: {varf=}
+ Output: []
+ File Table: {}
+Execution Stack: [(Opening file: varf;(int varc;(Reading from varf in variable varc;(print(varc);(Reading from varf in variable varc;(print(varc);Close File: varf)))))), varf=test.in]
+Symbol Table: {varf=}
+ Output: []
+ File Table: {}
+Execution Stack: [(Opening file: varf;(int varc;(Reading from varf in variable varc;(print(varc);(Reading from varf in variable varc;(print(varc);Close File: varf))))))]
+Symbol Table: {varf=test.in}
+ Output: []
+ File Table: {}
+Execution Stack: [(int varc;(Reading from varf in variable varc;(print(varc);(Reading from varf in variable varc;(print(varc);Close File: varf))))), Opening file: varf]
+Symbol Table: {varf=test.in}
+ Output: []
+ File Table: {}
+Execution Stack: [(int varc;(Reading from varf in variable varc;(print(varc);(Reading from varf in variable varc;(print(varc);Close File: varf)))))]
+Symbol Table: {varf=test.in}
+ Output: []
+ File Table: {test.in=java.io.BufferedReader@5c29bfd}
+Execution Stack: [(Reading from varf in variable varc;(print(varc);(Reading from varf in variable varc;(print(varc);Close File: varf)))), int varc]
+Symbol Table: {varf=test.in}
+ Output: []
+ File Table: {test.in=java.io.BufferedReader@5c29bfd}
+Execution Stack: [(Reading from varf in variable varc;(print(varc);(Reading from varf in variable varc;(print(varc);Close File: varf))))]
+Symbol Table: {varc=0, varf=test.in}
+ Output: []
+ File Table: {test.in=java.io.BufferedReader@5c29bfd}
+Execution Stack: [(print(varc);(Reading from varf in variable varc;(print(varc);Close File: varf))), Reading from varf in variable varc]
+Symbol Table: {varc=0, varf=test.in}
+ Output: []
+ File Table: {test.in=java.io.BufferedReader@5c29bfd}
+Execution Stack: [(print(varc);(Reading from varf in variable varc;(print(varc);Close File: varf)))]
+Symbol Table: {varc=15, varf=test.in}
+ Output: []
+ File Table: {test.in=java.io.BufferedReader@5c29bfd}
+Execution Stack: [(Reading from varf in variable varc;(print(varc);Close File: varf)), print(varc)]
+Symbol Table: {varc=15, varf=test.in}
+ Output: []
+ File Table: {test.in=java.io.BufferedReader@5c29bfd}
+Execution Stack: [(Reading from varf in variable varc;(print(varc);Close File: varf))]
+Symbol Table: {varc=15, varf=test.in}
+ Output: [15]
+ File Table: {test.in=java.io.BufferedReader@5c29bfd}
+Execution Stack: [(print(varc);Close File: varf), Reading from varf in variable varc]
+Symbol Table: {varc=15, varf=test.in}
+ Output: [15]
+ File Table: {test.in=java.io.BufferedReader@5c29bfd}
+Execution Stack: [(print(varc);Close File: varf)]
+Symbol Table: {varc=6, varf=test.in}
+ Output: [15]
+ File Table: {test.in=java.io.BufferedReader@5c29bfd}
+Execution Stack: [Close File: varf, print(varc)]
+Symbol Table: {varc=6, varf=test.in}
+ Output: [15]
+ File Table: {test.in=java.io.BufferedReader@5c29bfd}
+Execution Stack: [Close File: varf]
+Symbol Table: {varc=6, varf=test.in}
+ Output: [15, 6]
+ File Table: {test.in=java.io.BufferedReader@5c29bfd}
