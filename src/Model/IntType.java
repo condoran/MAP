@@ -13,4 +13,8 @@ public class IntType implements Type {
     @Override
     public String toString() { return "int"; }
 
+    @Override
+    public Value defaultValue() {
+        return new IntValue(0);
+    }
 }

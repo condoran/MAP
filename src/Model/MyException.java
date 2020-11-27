@@ -5,7 +5,7 @@ public class MyException extends Exception{
 
     public MyException(String m)
     {
-        super();
+        super(m);
         msg = m;
     }
 

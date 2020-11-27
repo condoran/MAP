@@ -37,8 +37,10 @@ public class Controller {
         if (dispalyFlag)
             System.out.println(prg.toString());
 
+        repo.logPrgStateExec();
         while (!prg.getStk().isEmpty()){
             oneStep(prg);
+            repo.logPrgStateExec();
             //here you can display the prg state
             if (dispalyFlag)
                 System.out.println(prg.toString());

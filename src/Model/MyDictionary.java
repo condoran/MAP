@@ -32,6 +32,13 @@ public class MyDictionary<T, V> implements MyIDictionary<T, V> {
     }
 
     @Override
+    public void delete(T id) throws MyException {
+        if (!dict.contains(id))
+            throw new MyException("The variable is not defined in the table!");
+        dict.remove(id);
+    }
+
+    @Override
     public String toString() {
         return dict.toString();
     }

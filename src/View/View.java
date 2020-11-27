@@ -22,7 +22,7 @@ public class View {
                 try {
                     ctrl.allStep();
                 } catch (MyException e) {
-                    System.out.println(e.getMessage());
+                    System.out.println(e.toString());
                 }
             }
             else if (option == 2) {
@@ -30,7 +30,7 @@ public class View {
                 try {
                     ctrl.allStep();
                 } catch (MyException e) {
-                    System.out.println(e.getMessage());
+                    System.out.println(e.toString());
                 }
             }
             else if (option == 3) {
@@ -38,7 +38,7 @@ public class View {
                 try {
                     ctrl.allStep();
                 } catch (MyException e) {
-                    System.out.println(e.getMessage());
+                    System.out.println(e.toString());
                 }
             }
             else if (option == 4)

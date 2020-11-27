@@ -16,6 +16,8 @@ public class VarDeclStmt implements IStmt {
             sym.add(name, new IntValue(0));
         else if (typ.equals(new BoolType()))
             sym.add(name, new BoolValue(false));
+        else if (typ.equals(new StringType()))
+            sym.add(name, new StringValue(""));
         return state;
     }
 
