@@ -13,4 +13,8 @@ public class BoolType implements Type {
     @Override
     public String toString() { return "bool"; }
 
+    @Override
+    public Value defaultValue() {
+        return new BoolValue(false);
+    }
 }

@@ -14,6 +14,15 @@ public class Repo implements IRepo {
     List<PrgState> list = new ArrayList<PrgState>();
     String logFilePath;
 
+    public Repo()
+    {
+    }
+
+    public Repo(String path)
+    {
+        logFilePath = path;
+    }
+
     @Override
     public void add(PrgState s) {
         list.add(s);
@@ -27,16 +36,16 @@ public class Repo implements IRepo {
     }
 
     @Override
-    public void logPrgStateExec() throws MyException {
+    public void logPrgStateExec(PrgState prg) throws MyException {
         PrintWriter logFile;
         try {
             logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)), true);
         }catch (IOException exception) {
             throw new MyException(exception.getMessage());
         }
-        PrgState state = list.get(0);
-        logFile.println(state.toString());
-        if (state.getStk().isEmpty()) {
+        logFile.println(prg.toString());
+        if (prg.getStk().isEmpty()) {
+            logFile.close();
             list.remove(0);
         }
     }

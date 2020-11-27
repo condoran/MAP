@@ -4,11 +4,13 @@ import java.io.BufferedReader;
 import java.util.Dictionary;
 
 public class PrgState {
-    MyIStack<IStmt> exeStack;
-    MyIDictionary<String, Value> symTable;
-    MyIList<Value> out;
-    MyIDictionary<String, BufferedReader> fileTable;
+    MyIStack<IStmt> exeStack = new MyStack<IStmt>();
+    MyIDictionary<String, Value> symTable = new MyDictionary<String, Value>();
+    MyIList<Value> out = new MyList<Value>();
+    MyIDictionary<String, BufferedReader> fileTable = new MyDictionary<String, BufferedReader>();
     IStmt originalProgram; //optional field, but good to have
+
+    public PrgState() {}
 
     public PrgState(MyIStack<IStmt> stk, MyIDictionary<String, Value> symtbl, MyIList<Value> ot, IStmt prg,
                     MyIDictionary<String, BufferedReader> fileTable){
@@ -22,7 +24,7 @@ public class PrgState {
 
     @Override
     public String toString() {
-        return "Execution Stack: " + exeStack.toString() + "\nSymbol Table: " + symTable.toString() + "\n Output: " + out.toString() + "\n File Table: " + fileTable.toString();
+        return "Execution Stack: " + exeStack.toString() + "\nSymbol Table: " + symTable.toString() + "\nOutput: " + out.toString() + "\nFile Table: " + fileTable.toString() + "\n";
     }
 
     public MyIDictionary<String, BufferedReader> getFileTable() { return fileTable; }

@@ -14,6 +14,10 @@ public class StringValue implements Value{
         return val;
     }
 
+    @Override
+    public String toString() {
+        return val;
+    }
 
     @Override
     public Type getType() {

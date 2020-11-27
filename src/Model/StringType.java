@@ -13,4 +13,6 @@ public class StringType implements Type{
         else
             return false;
     }
+
+    public String toString() { return "string"; }
 }

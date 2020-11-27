@@ -37,4 +37,9 @@ public class closeRFile implements IStmt{
         state.setFileTable(fileTable);
         return state ;
     }
+
+    @Override
+    public String toString() {
+        return "Close File: " + exp.toString();
+    }
 }

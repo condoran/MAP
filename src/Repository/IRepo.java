@@ -5,5 +5,5 @@ import Model.PrgState;
 public interface IRepo {
     void add(PrgState s);
     PrgState getCrtPrg();
-    void logPrgStateExec() throws MyException;
+    void logPrgStateExec(PrgState prg) throws MyException;
 }
