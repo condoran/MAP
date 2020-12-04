@@ -16,9 +16,9 @@ public class openRFile implements IStmt{
     public PrgState execute(PrgState state) throws MyException {
         MyIDictionary<String, Value> table = state.getSymTable();
         MyIDictionary<String, BufferedReader> fileTable = state.getFileTable();
-        if (exp.eval(table).getType().equals(new StringType()))
+        if (exp.eval(table, state.getHeap()).getType().equals(new StringType()))
         {
-            StringValue string = (StringValue) exp.eval(table);
+            StringValue string = (StringValue) exp.eval(table, state.getHeap());
             try
             {
                 BufferedReader read = new BufferedReader(new FileReader(string.getVal()));

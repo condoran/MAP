@@ -16,10 +16,10 @@ public class IfStmt implements IStmt {
     public PrgState execute(PrgState state) throws MyException
     {
         MyIStack<IStmt> stk = state.getStk();
-        if (!exp.eval(state.getSymTable()).getType().equals(new BoolType()))
+        if (!exp.eval(state.getSymTable(), state.getHeap()).getType().equals(new BoolType()))
             throw new MyException("If expresion not returning boolean value");
 
-        if (exp.eval(state.getSymTable()).equals(new BoolValue(true)))
+        if (exp.eval(state.getSymTable(), state.getHeap()).equals(new BoolValue(true)))
             stk.push(thenS);
         else
             stk.push(elseS);

@@ -15,9 +15,9 @@ public class closeRFile implements IStmt{
     public PrgState execute(PrgState state) throws MyException {
         MyIDictionary<String, Value>table = state.getSymTable();
         MyIDictionary<String, BufferedReader> fileTable = state.getFileTable();
-        if (exp.eval(table).getType().equals(new StringType()))
+        if (exp.eval(table, state.getHeap()).getType().equals(new StringType()))
         {
-            StringValue val = (StringValue) exp.eval(table);
+            StringValue val = (StringValue) exp.eval(table, state.getHeap());
             if (fileTable.isDefined(val.getVal()))
             {
                 BufferedReader buff = fileTable.lookup(val.getVal());
@@ -27,7 +27,7 @@ public class closeRFile implements IStmt{
                 } catch (IOException e) {
                     throw new MyException("File close failed!");
                 }
-                table.delete(val.getVal());
+                fileTable.delete(val.getVal());
             }
             else
                 throw new MyException("The file is not oppened!");

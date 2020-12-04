@@ -31,7 +31,7 @@ public class Repo implements IRepo {
     @Override
     public PrgState getCrtPrg() {
         PrgState curr = list.get(0);
-        list.remove(0);
+        //list.remove(0);
         return curr;
     }
 
@@ -44,6 +44,7 @@ public class Repo implements IRepo {
             throw new MyException(exception.getMessage());
         }
         logFile.println(prg.toString());
+        logFile.flush();
         if (prg.getStk().isEmpty()) {
             logFile.close();
             list.remove(0);

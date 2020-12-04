@@ -15,4 +15,6 @@ public class MyList<V> implements MyIList<V> {
     public String toString() {
         return list.toString();
     }
+
+    public List<V> getList() {return list;}
 }

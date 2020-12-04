@@ -12,12 +12,7 @@ public class VarDeclStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws MyException {
         MyIDictionary<String, Value> sym = state.getSymTable();
-        if (typ.equals( new IntType()))
-            sym.add(name, new IntValue(0));
-        else if (typ.equals(new BoolType()))
-            sym.add(name, new BoolValue(false));
-        else if (typ.equals(new StringType()))
-            sym.add(name, new StringValue(""));
+        sym.add(name, typ.defaultValue());
         return state;
     }
 

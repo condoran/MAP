@@ -23,9 +23,9 @@ public class ReadFile implements IStmt{
             Value val = table.lookup(varName);
             if (val.getType().equals(new IntType()))
             {
-                if (exp.eval(table).getType().equals(new StringType()))
+                if (exp.eval(table, state.getHeap()).getType().equals(new StringType()))
                 {
-                    StringValue strVal = (StringValue) exp.eval(table);
+                    StringValue strVal = (StringValue) exp.eval(table, state.getHeap());
                     BufferedReader buff = fileTable.lookup(strVal.getVal());
                     try {
                         String line = buff.readLine();

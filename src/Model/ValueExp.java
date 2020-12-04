@@ -10,7 +10,7 @@ public class ValueExp implements Exp {
     }
 
     @Override
-    public Value eval(MyIDictionary<String,Value> tbl) throws MyException{
+    public Value eval(MyIDictionary<String,Value> tbl, MyIHeap<Value> hp) throws MyException{
         return e;
     }
 

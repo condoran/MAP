@@ -20,7 +20,7 @@ public class AssignStmt implements IStmt {
 
         if (symTbl.isDefined(id))
         {
-            Value val = exp.eval(symTbl);
+            Value val = exp.eval(symTbl, state.getHeap());
             Type typId = (symTbl.lookup(id)).getType();
             if ((val.getType()).equals(typId))
                 symTbl.update(id, val);
