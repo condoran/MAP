@@ -14,6 +14,8 @@ public class PrgState {
     MyIDictionary<String, BufferedReader> fileTable = new MyDictionary<String, BufferedReader>();
     MyIHeap<Value> heap = new MyHeap<Value>();
     IStmt originalProgram; //optional field, but good to have
+    static int idG = 1;
+    int id;
 
     public PrgState() {}
 
@@ -25,12 +27,33 @@ public class PrgState {
         this.fileTable = fileTable;
         originalProgram=prg;//recreate the entire original prg
         this.heap = heap;
+        id = 1;
         stk.push(prg);
+    }
+
+    public void newId()
+    {
+        id = idG + 1;
+        idG++;
+    }
+
+    public PrgState copy(IStmt stmt) throws MyException {
+        MyIStack<IStmt> newStk = new MyStack<>();
+
+        MyIDictionary<String, Value> newDict = new MyDictionary<>();
+        for (Map.Entry<String, Value> e: symTable.getContent().entrySet())
+        {
+            newDict.add(e.getKey(), e.getValue().copy());
+        }
+
+        PrgState newPrg = new PrgState(newStk, newDict, out, stmt, fileTable, heap);
+        newPrg.newId();
+        return newPrg;
     }
 
     @Override
     public String toString() {
-        return "Execution Stack: " + exeStack.toString() + "\nSymbol Table: " + symTable.toString() + "\nOutput: " + out.toString() + "\nFile Table: " + fileTable.toString() + "\nHeap: " + heap.toString() + "\n";
+        return "ID: " + id + "Execution Stack: " + exeStack.toString() + "\nSymbol Table: " + symTable.toString() + "\nOutput: " + out.toString() + "\nFile Table: " + fileTable.toString() + "\nHeap: " + heap.toString() + "\n";
     }
 
     public MyIHeap<Value> getHeap() {return heap;}
@@ -54,6 +77,15 @@ public class PrgState {
     public MyIStack<IStmt> getStk()
     {
         return exeStack;
+    }
+
+    public Boolean isNotCompleted() {return !exeStack.isEmpty();}
+
+    PrgState oneStep() throws MyException {
+        if (exeStack.isEmpty())
+            throw new MyException("prgstate stack is empty");
+        IStmt crtStmt = exeStack.pop();
+        return crtStmt.execute(this);
     }
 
 

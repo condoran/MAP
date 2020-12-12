@@ -3,6 +3,7 @@ package Model;
 import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.Map;
 
 public class MyDictionary<T, V> implements MyIDictionary<T, V> {
     Hashtable<T, V> dict = new Hashtable<T, V>();

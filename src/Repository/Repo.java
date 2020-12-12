@@ -29,13 +29,6 @@ public class Repo implements IRepo {
     }
 
     @Override
-    public PrgState getCrtPrg() {
-        PrgState curr = list.get(0);
-        //list.remove(0);
-        return curr;
-    }
-
-    @Override
     public void logPrgStateExec(PrgState prg) throws MyException {
         PrintWriter logFile;
         try {
@@ -49,5 +42,15 @@ public class Repo implements IRepo {
             logFile.close();
             list.remove(0);
         }
+    }
+
+    @Override
+    public List<PrgState> getPrgList() {
+        return list;
+    }
+
+    @Override
+    public void setPrgList(List<PrgState> l) {
+        list = l;
     }
 }

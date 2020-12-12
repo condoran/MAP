@@ -27,8 +27,8 @@ public class Controller {
         return Stream.concat(heap.stream().filter(v -> v instanceof RefValue)
                 .map(v ->
                 {
-                    RefValue val = (RefValue) v;
-                    return val.getAddr();
+                    RefValue v1 = (RefValue) v;
+                    return v1.getAddr();
                 }),
                 symTableValues.stream().filter(v -> v instanceof RefValue).map(v -> {
             RefValue v1 = (RefValue) v;
@@ -46,13 +46,13 @@ public class Controller {
         return repo;
     }
 
-    PrgState oneStep(PrgState state) throws MyException{
-        MyIStack<IStmt> stk=state.getStk();
-        if(stk.isEmpty())
-            throw new MyException("prgstate stack is empty");
-        IStmt crtStmt = stk.pop();
-        return crtStmt.execute(state);
-    }
+//    PrgState oneStep(PrgState state) throws MyException{
+//        MyIStack<IStmt> stk=state.getStk();
+//        if(stk.isEmpty())
+//            throw new MyException("prgstate stack is empty");
+//        IStmt crtStmt = stk.pop();
+//        return crtStmt.execute(state);
+//    }
 
     public void allStep() throws MyException {
         PrgState prg = repo.getCrtPrg(); // repo is the controller field of type MyRepoInterface

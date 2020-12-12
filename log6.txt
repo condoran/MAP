@@ -1,0 +1,72 @@
+Execution Stack: [(Ref(int) v;(new(v, 20);(Ref(Ref(int)) a;(new(a, v);(print(rH(v));print(rH(rH(a))))))))]
+Symbol Table: {}
+Output: []
+File Table: {}
+Heap: {}
+
+Execution Stack: [(new(v, 20);(Ref(Ref(int)) a;(new(a, v);(print(rH(v));print(rH(rH(a))))))), Ref(int) v]
+Symbol Table: {}
+Output: []
+File Table: {}
+Heap: {}
+
+Execution Stack: [(new(v, 20);(Ref(Ref(int)) a;(new(a, v);(print(rH(v));print(rH(rH(a)))))))]
+Symbol Table: {v=0 - int}
+Output: []
+File Table: {}
+Heap: {}
+
+Execution Stack: [(Ref(Ref(int)) a;(new(a, v);(print(rH(v));print(rH(rH(a)))))), new(v, 20)]
+Symbol Table: {v=0 - int}
+Output: []
+File Table: {}
+Heap: {}
+
+Execution Stack: [(Ref(Ref(int)) a;(new(a, v);(print(rH(v));print(rH(rH(a))))))]
+Symbol Table: {v=1 - int}
+Output: []
+File Table: {}
+Heap: {1=20}
+
+Execution Stack: [(new(a, v);(print(rH(v));print(rH(rH(a))))), Ref(Ref(int)) a]
+Symbol Table: {v=1 - int}
+Output: []
+File Table: {}
+Heap: {1=20}
+
+Execution Stack: [(new(a, v);(print(rH(v));print(rH(rH(a)))))]
+Symbol Table: {a=0 - Ref(int), v=1 - int}
+Output: []
+File Table: {}
+Heap: {1=20}
+
+Execution Stack: [(print(rH(v));print(rH(rH(a)))), new(a, v)]
+Symbol Table: {a=0 - Ref(int), v=1 - int}
+Output: []
+File Table: {}
+Heap: {1=20}
+
+Execution Stack: [(print(rH(v));print(rH(rH(a))))]
+Symbol Table: {a=2 - Ref(int), v=1 - int}
+Output: []
+File Table: {}
+Heap: {1=20, 2=1 - int}
+
+Execution Stack: [print(rH(rH(a))), print(rH(v))]
+Symbol Table: {a=2 - Ref(int), v=1 - int}
+Output: []
+File Table: {}
+Heap: {1=20, 2=1 - int}
+
+Execution Stack: [print(rH(rH(a)))]
+Symbol Table: {a=2 - Ref(int), v=1 - int}
+Output: [20]
+File Table: {}
+Heap: {1=20, 2=1 - int}
+
+Execution Stack: []
+Symbol Table: {a=2 - Ref(int), v=1 - int}
+Output: [20, 20]
+File Table: {}
+Heap: {1=20, 2=1 - int}
+
